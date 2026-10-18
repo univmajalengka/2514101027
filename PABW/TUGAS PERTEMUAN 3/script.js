@@ -37,14 +37,12 @@ observedSections.forEach((section) => sectionObserver.observe(section));
 
 const lightbox = document.querySelector('.lightbox');
 const lightboxImage = lightbox.querySelector('img');
-const lightboxCaption = lightbox.querySelector('p');
 
 document.querySelectorAll('.gallery-card').forEach((card) => {
   card.addEventListener('click', () => {
     const image = card.querySelector('img');
     lightboxImage.src = card.dataset.full || image.src;
     lightboxImage.alt = image.alt;
-    lightboxCaption.textContent = card.dataset.caption || image.alt;
     lightbox.showModal();
   });
 });
